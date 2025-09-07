@@ -1,0 +1,12 @@
+{
+  "firstname": "Shahina",
+  "lastname": "Perveen",
+  "email": "SP@pop.com",
+  "password": "123456789",
+  "street": "123 Main St",
+  "city": "New York",
+  "state": "New York",
+  "zip": "10001",
+  "noOfPassengers": "4",
+  "expectedPrice": "$2338 USD"
+}

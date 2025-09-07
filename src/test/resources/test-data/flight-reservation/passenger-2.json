@@ -1,0 +1,12 @@
+{
+  "firstname": "Zeeshan",
+  "lastname": "Siddiqui",
+  "email": "ZS@pop.com",
+  "password": "123456789",
+  "street": "123 Main St",
+  "city": "Houston",
+  "state": "Texas",
+  "zip": "10002",
+  "noOfPassengers": "2",
+  "expectedPrice": "$1169 USD"
+}

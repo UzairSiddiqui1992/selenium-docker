@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="vendor-portal" parallel="tests" thread-count="3">
+    <test name="sam-user">
+        <parameter name="testDataFilePath" value="test-data/vendor-portal/sam.json"/>
+        <classes>
+            <class name="com.vinsguru.tests.vendorPortal.VendorPortalTest"/>
+        </classes>
+    </test>
+
+    <test name="mike-user">
+        <parameter name="testDataFilePath" value="test-data/vendor-portal/mike.json"/>
+        <classes>
+            <class name="com.vinsguru.tests.vendorPortal.VendorPortalTest"/>
+        </classes>
+    </test>
+
+    <test name="john-user">
+        <parameter name="testDataFilePath" value="test-data/vendor-portal/john.json"/>
+        <classes>
+            <class name="com.vinsguru.tests.vendorPortal.VendorPortalTest"/>
+        </classes>
+    </test>
+</suite>
