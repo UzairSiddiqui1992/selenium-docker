@@ -8,7 +8,7 @@ stages{
     }
     stage('Build Docker Image'){
         steps{
-            bat "docker build -t uzairsiddiqui38/selenium ."
+            bat "docker build -t=uzairsiddiqui38/selenium ."
         }
     }
     stage('Pushing Image to Docker Hub'){
@@ -16,4 +16,5 @@ stages{
             bat "docker push uzairsiddiqui38/selenium"
         }
     }
+}
 }
