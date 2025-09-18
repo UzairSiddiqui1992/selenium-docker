@@ -8,13 +8,25 @@ stages{
     }
     stage('Build Docker Image'){
         steps{
-            bat "docker build -t=uzairsiddiqui38/selenium ."
+            bat "docker build -t=uzairsiddiqui38/selenium:latest ."
         }
     }
     stage('Pushing Image to Docker Hub'){
+    environment{
+            DOCKER_HUB = credentials('docker_hub_credentials')
+    }
         steps{
-            bat "docker push uzairsiddiqui38/selenium"
+            //bat 'docker login -u %DOCKER_HUB_USR% -p %DOCKER_HUB_PSW%'
+            bat 'echo %DOCKER_HUB_PSW% | docker login -u %DOCKER_HUB_USR% --password-stdin'
+            bat "docker push uzairsiddiqui38/selenium:latest"
+            bat "docker tag uzairsiddiqui38/selenium:latest uzairsiddiqui38/selenium:${env.BUILD_NUMBER}"
+            bat "docker push uzairsiddiqui38/selenium:${env.BUILD_NUMBER}"
         }
     }
 }
-}
+   post{
+     always{
+        bat "docker logout"
+        }
+        }
+    }
